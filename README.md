@@ -1,10 +1,10 @@
 # contact form pow
-Boilerplate code for protecting a contact form with proof of work.
+This project serves a contact form that is protected with (hashcash) proof of work against spam. 
 
-This project was inspired by [hashcash-form-protect](https://github.com/jlopp/hashcash-form-protect). It is designed to run everything server-side with javascript and Node.
+When you run the code it displays a basic contact form in your browser. To submit the form, your browser will need to solve a puzzle - essentially a math problem that requires time to solve. Once solved, the form submission will be accepted by the server and an email will be sent to you with the contents of the contact form.
 
-Javascript is used to generate a contact form in the browser that solves a hashcash proof of work puzzle before the form can be submitted. Javascript is also used to generate the hashcash puzzle and validate the proof of work produced by the browser.
-
+This project was inspired by [hashcash-form-protect](https://github.com/jlopp/hashcash-form-protect). But it is designed to run everything server-side with javascript and Node.
+ 
 ## Environment Variables 
 The environment variables to configure are in the sample.env file.  Copy the sample.env file to a .env file and make your changes.  You must set the 'YOUR_TO_EMAIL_ADDRESS', 'YOUR_FROM_EMAIL_ADDRESS' and 'SMTP' variables used to send emails.  The remaining variables can be left default.
 
@@ -27,4 +27,5 @@ The program generates logs that are saved to the repo logs folder.
 - `npm run dev` to start app with nodemon
 - Go to http://localhost:5000/register in your browser
 
-
+## Screenshot
+![alt text](screenshots/contact-form-pow-20241016.png)
