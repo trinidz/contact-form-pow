@@ -18,7 +18,7 @@ The environment variables to configure are in the sample.env file.  Copy the sam
 8. HASHCASH_DIFFICULTY - proof of work difficulty level (1 - 40); the higher the number the more difficult
 
 ## Logs
-The program generates logs that are saved to the repos logs folder.
+The program generates logs that are saved to the repo logs folder.
 
 ## Development
 - `git clone` this repo
