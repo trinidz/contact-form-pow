@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/styles.css" /> 
+  <link rel="shortcut icon" href="../img/favicon.png">
+  <script type="text/javascript" src="js/active.js"></script>
+  <script type="text/javascript" src="js/hashcash_client.js"></script>
+</head>
+
+<body>
+  <div class="container">
+    <header class="header">
+      <h1 id="contact-form-title" class="text-center">Registration Form</h1>
+    </header>
+
+    <form id="contact-form" action="/register" method="POST">
+      <input type="text" name="_gotcha" style="display:none"/>
+      <input type="hidden" name="hc_stamp" id="hc_stamp" value="<%= hc_stamp %>"/>
+      <input type="hidden" name="hc_difficulty" id="hc_difficulty" value="<%= hc_difficulty %>"/>
+      <input type="hidden" name="hc_ip" id="hc_ip" value="<%= hc_ip %>"/>
+      <input type="hidden" name="hc_nonce" id="hc_nonce" value=""/>
+      <label>
+        <input name="participation" value="requirements for participation" type="checkbox" class="input-checkbox"
+         />I have read and agree to the EULA of this website.</label>
+      <div class="form-group">
+        <label id="name-label" for="name">Name:</label>
+        <input type="text" name="name" id="name" class="form-control" placeholder="Enter your name" />
+        <div class="form-error-msg" id="name-error-msg"></div>
+      </div>
+      <div class="form-group">
+        <label id="email-label" for="email">Email:</label>
+        <input type="text" name="email" id="email" class="form-control" placeholder="Enter your email" />
+        <div class="form-error-msg" id="email-error-msg"></div>
+      </div>
+      <div class="form-group">
+        <p>Region:</p>
+        <select id="region-selection" name="region" class="form-control" >
+          <option disabled selected value>Select your region</option>
+          <option value="amer-carrib">The Americas & Carribean</option>
+          <option value="asia">Asia</option>
+          <option value="e-s_africa">East & Southern Africa</option>
+          <option value="europe">Europe</option>
+          <option value="m-east">Middle East</option>
+          <option value="s-pacific">South Pacific</option>
+          <option value="w-c_africa">West & Central Africa</option>
+        </select>
+      </div>
+
+      <div class="form-group time-row">
+        <p>Please choose your time preference.:</p>
+        <hr class="solid">
+        <div class="time-col">
+        <label>
+          <input
+            name="firstPref"
+            id="radBtn9AM_1"
+            value="9AM-ET"
+            type="radio"
+            class="input-radio"
+          />9:00 AM ET</label>
+
+        <label>
+          <input
+            name="firstPref"
+            id="radBtn12PM_1"
+            value="12PM-ET"
+            type="radio"
+            class="input-radio"
+          />12:00 PM ET</label>
+
+        <label
+          ><input
+            name="firstPref"
+            id="radBtn4PM_1"
+            value="4PM-ET"
+            type="radio"
+            class="input-radio"
+          />4:00 PM ET</label>
+        </div>
+
+      </div>
+
+      <div class="form-group">
+        <p>Comments or suggestions?</p>
+        <textarea id="comments" class="input-textarea" name="comment" placeholder="Enter your comments here..."></textarea>
+        <div class="form-error-msg" id="comment-error-msg"></div>
+      </div>
+
+      <div class="form-group">
+        <button type="submit" id="submit-btn-id" class="submit-button">
+          Register
+        </button>
+      </div>
+
+      <div id="modal-container" class="modal">
+        <div class="modal-content">
+          <div class="loader"></div>
+          <p class="hashTime" id="hashTime"></p>
+        </div>
+      </div>
+      
+    </form>
+  </div>
+</body>
+  <script> hc_handleSubmit() </script>
+</html>
